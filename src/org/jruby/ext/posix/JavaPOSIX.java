@@ -126,6 +126,10 @@ public class JavaPOSIX implements POSIX {
                 || fd == FileDescriptor.err);
     }
 
+    public int ioctl(FileDescriptor fd, long request, Object... arg) {
+    	return unimplementedInt("ioctl");
+    }
+
     public int kill(int pid, int signal) {
         return unimplementedInt("kill");    // FIXME: Can be implemented
     }
