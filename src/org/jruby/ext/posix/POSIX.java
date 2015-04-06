@@ -37,6 +37,7 @@ public interface POSIX {
     public int setpwent();
     public int getuid();
     public boolean isatty(FileDescriptor descriptor);
+    public int ioctl(FileDescriptor descriptor, long request, Object... arg);
     public int kill(int pid, int signal);
     public int lchmod(String filename, int mode);
     public int lchown(String filename, int user, int group);

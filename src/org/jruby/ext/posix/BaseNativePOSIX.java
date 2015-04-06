@@ -240,6 +240,10 @@ public abstract class BaseNativePOSIX implements POSIX {
         return libc.isatty(helper.getfd(fd)) != 0;
     }
 
+    public int ioctl(FileDescriptor fd, long request, Object... arg) {
+        return libc.ioctl(helper.getfd(fd), request, arg);
+    }
+
     public int errno() {
         return Native.getLastError();
     }

@@ -30,6 +30,7 @@
 package org.jruby.ext.posix;
 
 import com.sun.jna.Library;
+
 import java.nio.ByteBuffer;
 
 public interface LibC extends Library {
@@ -83,4 +84,5 @@ public interface LibC extends Library {
     public int getpriority(int which, int who);
     public int setpriority(int which, int who, int prio);
     public int isatty(int fd);
+    public int ioctl(int fd, long request, Object... arg );
 }
