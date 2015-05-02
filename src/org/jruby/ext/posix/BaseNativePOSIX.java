@@ -4,7 +4,9 @@ import com.sun.jna.FromNativeContext;
 import com.sun.jna.FromNativeConverter;
 import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
+import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
+
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -240,7 +242,7 @@ public abstract class BaseNativePOSIX implements POSIX {
         return libc.isatty(helper.getfd(fd)) != 0;
     }
 
-    public int ioctl(FileDescriptor fd, long request, Object... arg) {
+    public int ioctl(FileDescriptor fd, NativeLong request, Object... arg) {
         return libc.ioctl(helper.getfd(fd), request, arg);
     }
 

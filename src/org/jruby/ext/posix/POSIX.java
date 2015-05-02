@@ -3,6 +3,8 @@ package org.jruby.ext.posix;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
+import com.sun.jna.NativeLong;
+
 
 public interface POSIX {
     // When we use JNA-3 we can get errno, Then these values should match proper machine values.
@@ -37,7 +39,7 @@ public interface POSIX {
     public int setpwent();
     public int getuid();
     public boolean isatty(FileDescriptor descriptor);
-    public int ioctl(FileDescriptor descriptor, long request, Object... arg);
+    public int ioctl(FileDescriptor descriptor, NativeLong request, Object... arg);
     public int kill(int pid, int signal);
     public int lchmod(String filename, int mode);
     public int lchown(String filename, int user, int group);

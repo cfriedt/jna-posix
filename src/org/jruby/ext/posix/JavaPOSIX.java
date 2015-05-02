@@ -7,7 +7,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+
 import org.jruby.ext.posix.util.Platform;
+
+import com.sun.jna.NativeLong;
 
 public class JavaPOSIX implements POSIX {
     POSIXHandler handler;
@@ -126,7 +129,7 @@ public class JavaPOSIX implements POSIX {
                 || fd == FileDescriptor.err);
     }
 
-    public int ioctl(FileDescriptor fd, long request, Object... arg) {
+    public int ioctl(FileDescriptor fd, NativeLong request, Object... arg) {
     	return unimplementedInt("ioctl");
     }
 
