@@ -4,6 +4,7 @@ import java.io.FileDescriptor;
 import java.io.IOException;
 
 import com.sun.jna.NativeLong;
+import com.sun.jna.Pointer;
 
 
 public interface POSIX {
@@ -14,6 +15,7 @@ public interface POSIX {
 
     public int chmod(String filename, int mode);
     public int chown(String filename, int user, int group);
+    public Pointer fdopen( FileDescriptor descriptor );
     public int fork();
     public FileStat fstat(FileDescriptor descriptor);
     public int getegid();
