@@ -34,8 +34,8 @@ public class JavaPOSIX implements POSIX {
         return helper.chown(filename, user, group);
     }
     
-	public Pointer fdopen(FileDescriptor descriptor) {
-        handler.unimplementedError("fstat unimplemented");
+	public Pointer fdopen( FileDescriptor descriptor, String mode ) {
+        handler.unimplementedError("fdopen unimplemented");
         return null;
 	}
 

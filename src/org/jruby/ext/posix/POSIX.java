@@ -15,7 +15,7 @@ public interface POSIX {
 
     public int chmod(String filename, int mode);
     public int chown(String filename, int user, int group);
-    public Pointer fdopen( FileDescriptor descriptor );
+    public Pointer fdopen( FileDescriptor descriptor, String mode );
     public int fork();
     public FileStat fstat(FileDescriptor descriptor);
     public int getegid();
