@@ -11,6 +11,7 @@ import java.nio.charset.Charset;
 import org.jruby.ext.posix.util.Platform;
 
 import com.sun.jna.NativeLong;
+import com.sun.jna.Pointer;
 
 public class JavaPOSIX implements POSIX {
     POSIXHandler handler;
@@ -33,6 +34,11 @@ public class JavaPOSIX implements POSIX {
         return helper.chown(filename, user, group);
     }
     
+	public Pointer fdopen(FileDescriptor descriptor) {
+        handler.unimplementedError("fstat unimplemented");
+        return null;
+	}
+
     public FileStat fstat(FileDescriptor descriptor) {
         handler.unimplementedError("fstat unimplemented");
         
