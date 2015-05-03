@@ -35,8 +35,8 @@ public abstract class BaseNativePOSIX implements POSIX {
 
     public Pointer fdopen( FileDescriptor descriptor ) {
         int fd = helper.getfd( descriptor );
-        long ptr = libc.fdopen( fd );
-        Pointer p = Pointer.createConstant( ptr );
+        NativeLong ptr = libc.fdopen( fd );
+        Pointer p = Pointer.createConstant( ptr.longValue() );
         return p;
     }
 
